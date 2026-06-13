@@ -191,30 +191,30 @@
   body.theme-amber .wave-3 path.stroke{stroke:rgba(225,180,80,0.9)}
   body.theme-amber .sparkle{background:rgba(255,180,60,0.85);box-shadow:0 0 6px 2px rgba(255,160,50,0.5)}
 
-  /* ===== 主题3: 薄暮粉金 ===== */
-  body.theme-sunset{
-    background:linear-gradient(180deg,#fde8ec 0%,#f8d0dc 40%,#f0b8cc 100%);
-    color:#6b2a4a;
+  /* ===== 主题3: 清透蓝 ===== */
+  body.theme-sky{
+    background:linear-gradient(180deg,#e8f4fc 0%,#c8e4f8 40%,#a8d4f0 100%);
+    color:#1a4a6b;
   }
-  body.theme-sunset::before{
+  body.theme-sky::before{
     background:
-      radial-gradient(ellipse 80% 60% at 50% 35%,rgba(255,200,180,0.55) 0%,transparent 60%),
-      radial-gradient(ellipse 100% 80% at 50% 40%,rgba(255,160,140,0.2) 0%,transparent 70%);
+      radial-gradient(ellipse 80% 60% at 50% 35%,rgba(180,220,255,0.6) 0%,transparent 60%),
+      radial-gradient(ellipse 100% 80% at 50% 40%,rgba(140,200,240,0.25) 0%,transparent 70%);
   }
-  body.theme-sunset .top-line{color:rgba(160,80,100,0.6)}
-  body.theme-sunset .main-text{color:#6b2a4a}
-  body.theme-sunset .divider{background:linear-gradient(to bottom,transparent,rgba(200,100,140,0.5),transparent)}
-  body.theme-sunset .bottom-line{color:rgba(150,70,100,0.55)}
-  body.theme-sunset .corner{border-color:rgba(200,100,130,0.8)}
-  body.theme-sunset .footer{color:rgba(150,70,100,0.3)}
-  body.theme-sunset .apple-svg{filter:drop-shadow(0 0 28px rgba(200,80,100,0.5))}
-  body.theme-sunset .wave-1 path.fill{fill:rgba(200,120,140,0.15)}
-  body.theme-sunset .wave-1 path.stroke{stroke:rgba(200,120,140,0.4)}
-  body.theme-sunset .wave-2 path.fill{fill:rgba(215,145,160,0.22)}
-  body.theme-sunset .wave-2 path.stroke{stroke:rgba(215,145,160,0.65)}
-  body.theme-sunset .wave-3 path.fill{fill:rgba(235,175,185,0.32)}
-  body.theme-sunset .wave-3 path.stroke{stroke:rgba(230,155,170,0.9)}
-  body.theme-sunset .sparkle{background:rgba(255,160,180,0.85);box-shadow:0 0 6px 2px rgba(255,130,160,0.5)}
+  body.theme-sky .top-line{color:rgba(60,130,180,0.6)}
+  body.theme-sky .main-text{color:#1a4a6b}
+  body.theme-sky .divider{background:linear-gradient(to bottom,transparent,rgba(60,150,200,0.5),transparent)}
+  body.theme-sky .bottom-line{color:rgba(40,120,170,0.55)}
+  body.theme-sky .corner{border-color:rgba(60,150,200,0.8)}
+  body.theme-sky .footer{color:rgba(40,120,170,0.3)}
+  body.theme-sky .apple-svg{filter:drop-shadow(0 0 28px rgba(60,140,200,0.55))}
+  body.theme-sky .wave-1 path.fill{fill:rgba(80,160,200,0.15)}
+  body.theme-sky .wave-1 path.stroke{stroke:rgba(80,160,200,0.4)}
+  body.theme-sky .wave-2 path.fill{fill:rgba(100,180,220,0.22)}
+  body.theme-sky .wave-2 path.stroke{stroke:rgba(100,180,220,0.65)}
+  body.theme-sky .wave-3 path.fill{fill:rgba(130,200,240,0.32)}
+  body.theme-sky .wave-3 path.stroke{stroke:rgba(130,200,240,0.9)}
+  body.theme-sky .sparkle{background:rgba(160,220,255,0.85);box-shadow:0 0 6px 2px rgba(120,200,255,0.5)}
 
   /* ===== 主题4: 暗夜暖橙（原版） ===== */
   body.theme-dark{
@@ -376,8 +376,8 @@
       <div class="swatch-name">琥珀</div>
     </div>
     <div>
-      <div class="swatch" style="background:linear-gradient(135deg,#f8d0dc,#e088a8)" onclick="setTheme('sunset')" title="薄暮粉金"></div>
-      <div class="swatch-name">粉金</div>
+      <div class="swatch" style="background:linear-gradient(135deg,#c8e4f8,#5ab8e0)" onclick="setTheme('sky')" title="清透蓝"></div>
+      <div class="swatch-name">清蓝</div>
     </div>
     <div>
       <div class="swatch" style="background:linear-gradient(135deg,#1a1008,#3d2010)" onclick="setTheme('dark')" title="暗夜暖橙"></div>
