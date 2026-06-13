@@ -309,6 +309,17 @@
   body.theme-dawn .wave-3 path.stroke{stroke:rgba(255,200,120,0.85)}
   body.theme-dawn .sparkle{background:rgba(255,200,100,0.85);box-shadow:0 0 6px 2px rgba(255,180,80,0.5)}
 
+  /* 晨昏线主题：底部平线替代波浪 */
+  body.theme-dawn .waves-wrap{height:100px}
+  body.theme-dawn .wave-1 svg path.fill{display:none}
+  body.theme-dawn .wave-1 svg path.stroke{stroke:rgba(200,130,50,0.3);stroke-width:1;d:none}
+  body.theme-dawn .wave-1{background:linear-gradient(to top,rgba(200,130,50,0.2),transparent);bottom:0;top:auto;height:90px;left:0;right:0;width:100%}
+  body.theme-dawn .wave-1::before{content:'';position:absolute;left:0;right:0;top:30px;height:1px;background:rgba(200,150,70,0.35)}
+  body.theme-dawn .wave-2{background:linear-gradient(to top,rgba(220,155,70,0.18),transparent);bottom:0;top:auto;height:80px;left:0;right:0;width:100%}
+  body.theme-dawn .wave-2::before{content:'';position:absolute;left:0;right:0;top:25px;height:1px;background:rgba(220,170,80,0.5)}
+  body.theme-dawn .wave-3{background:linear-gradient(to top,rgba(240,185,90,0.25),transparent);bottom:0;top:auto;height:70px;left:0;right:0;width:100%}
+  body.theme-dawn .wave-3::before{content:'';position:absolute;left:0;right:0;top:20px;height:1.5px;background:rgba(255,200,100,0.8);box-shadow:0 0 8px 2px rgba(255,180,60,0.3)}
+
   /* 海面波纹 */
   .waves-wrap{
     position:fixed;bottom:0;left:0;right:0;height:140px;overflow:hidden;z-index:0;pointer-events:none;
@@ -488,42 +499,24 @@ function setTheme(name){
 })();
 </script>
 
-<!-- 海面波纹：软边平线，叠在底部 -->
+<!-- 海面波纹 -->
 <div class="waves-wrap">
   <div class="wave wave-1">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="flatGrad1" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="rgba(200,140,50,0.28)"/>
-          <stop offset="100%" stop-color="rgba(200,140,50,0)"/>
-        </linearGradient>
-      </defs>
-      <rect x="0" y="60" width="1440" height="60" fill="url(#flatGrad1)"/>
-      <line x1="0" y1="60" x2="1440" y2="60" stroke="rgba(200,150,70,0.35)" stroke-width="1"/>
+      <path class="fill" d="M0,60 C180,90 360,30 540,60 C720,90 900,30 1080,60 C1260,90 1440,30 1440,60 L1440,120 L0,120 Z"/>
+      <path class="stroke" d="M0,60 C180,90 360,30 540,60 C720,90 900,30 1080,60 C1260,90 1440,30 1440,60"/>
     </svg>
   </div>
   <div class="wave wave-2">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="flatGrad2" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="rgba(220,165,80,0.22)"/>
-          <stop offset="100%" stop-color="rgba(220,165,80,0)"/>
-        </linearGradient>
-      </defs>
-      <rect x="0" y="70" width="1440" height="50" fill="url(#flatGrad2)"/>
-      <line x1="0" y1="70" x2="1440" y2="70" stroke="rgba(220,170,80,0.55)" stroke-width="1"/>
+      <path class="fill" d="M0,60 C200,30 400,90 600,60 C800,30 1000,90 1200,60 C1350,40 1440,55 1440,55 L1440,120 L0,120 Z"/>
+      <path class="stroke" d="M0,60 C200,30 400,90 600,60 C800,30 1000,90 1200,60 C1350,40 1440,55 1440,55"/>
     </svg>
   </div>
   <div class="wave wave-3">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="flatGrad3" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="rgba(240,185,90,0.3)"/>
-          <stop offset="100%" stop-color="rgba(240,185,90,0)"/>
-        </linearGradient>
-      </defs>
-      <rect x="0" y="80" width="1440" height="40" fill="url(#flatGrad3)"/>
-      <line x1="0" y1="80" x2="1440" y2="80" stroke="rgba(240,185,90,0.85)" stroke-width="1.2"/>
+      <path class="fill" d="M0,55 C150,85 300,25 480,55 C660,85 840,25 1020,55 C1200,85 1380,25 1440,50 L1440,120 L0,120 Z"/>
+      <path class="stroke" d="M0,55 C150,85 300,25 480,55 C660,85 840,25 1020,55 C1200,85 1380,25 1440,50"/>
     </svg>
   </div>
 </div>
