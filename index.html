@@ -325,32 +325,22 @@
 
 <div class="container">
 
-  <!-- 幽灵苹果 SVG -->
+  <!-- 幽灵苹果 SVG：外层半透明环 + 内层实心红 -->
   <div class="apple-wrap">
-    <svg class="apple-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="appleAura" cx="50%" cy="50%">
-          <stop offset="0%" stop-color="#c8534a" stop-opacity="0.35"/>
-          <stop offset="100%" stop-color="transparent"/>
-        </radialGradient>
-        <radialGradient id="appleBodyGrad" cx="38%" cy="35%" r="60%">
-          <stop offset="0%" stop-color="#d4645a"/>
-          <stop offset="60%" stop-color="#c8534a"/>
-          <stop offset="100%" stop-color="#8B0000"/>
-        </radialGradient>
-        <filter id="appleShadow">
-          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#8B0000" flood-opacity="0.4"/>
-        </filter>
-      </defs>
-      <circle cx="50" cy="55" r="52" fill="url(#appleAura)"/>
-      <ellipse cx="50" cy="57" rx="38" ry="40" fill="url(#appleBodyGrad)" filter="url(#appleShadow)"/>
-      <ellipse cx="50" cy="22" rx="10" ry="5" fill="#c8534a" opacity="0.5"/>
-      <ellipse cx="34" cy="44" rx="9" ry="11" fill="rgba(255,255,255,0.18)" transform="rotate(-15,34,44)"/>
-      <ellipse cx="26" cy="62" rx="8" ry="5" fill="rgba(180,60,60,0.3)"/>
-      <ellipse cx="74" cy="62" rx="8" ry="5" fill="rgba(180,60,60,0.3)"/>
-      <path d="M50,20 Q48,10 52,6" stroke="#5a3a2a" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <path d="M52,6 Q62,0 68,8 Q60,15 52,12 Q50,10 52,6Z" fill="#5a7a3a" stroke="#4a6a2a" stroke-width="0.5"/>
-      <path d="M35,86 Q50,94 65,86" stroke="rgba(139,0,0,0.3)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <svg class="apple-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- 外层大光晕（半透明） -->
+      <ellipse cx="100" cy="100" rx="88" ry="88" fill="rgba(200,83,74,0.06)" filter="blur(10px)"/>
+      <!-- 外层半透明边框环 -->
+      <ellipse cx="100" cy="105" rx="75" ry="70" fill="rgba(200,83,74,0.12)" stroke="rgba(200,83,74,0.25)" stroke-width="1"/>
+      <!-- 内层实心红（90%不透明度） -->
+      <ellipse cx="100" cy="105" rx="68" ry="63" fill="rgba(200,83,74,0.9)"/>
+      <!-- 腮红两个 -->
+      <ellipse cx="55" cy="115" rx="14" ry="9" fill="rgba(255,100,100,0.25)"/>
+      <ellipse cx="145" cy="115" rx="14" ry="9" fill="rgba(255,100,100,0.25)"/>
+      <!-- 叶子 -->
+      <path d="M100,42 Q96,28 106,22 Q115,30 108,42 Q104,38 100,42Z" fill="#4a7a3a" stroke="#3a6a2a" stroke-width="0.5"/>
+      <!-- 高光 -->
+      <ellipse cx="72" cy="80" rx="20" ry="14" fill="rgba(255,255,255,0.12)" transform="rotate(-20,72,80)"/>
     </svg>
   </div>
 
