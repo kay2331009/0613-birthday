@@ -488,24 +488,42 @@ function setTheme(name){
 })();
 </script>
 
-<!-- 海面波纹 -->
+<!-- 海面波纹：软边平线，叠在底部 -->
 <div class="waves-wrap">
   <div class="wave wave-1">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path class="fill" d="M0,60 C180,90 360,30 540,60 C720,90 900,30 1080,60 C1260,90 1440,30 1440,60 L1440,120 L0,120 Z"/>
-      <path class="stroke" d="M0,60 C180,90 360,30 540,60 C720,90 900,30 1080,60 C1260,90 1440,30 1440,60"/>
+      <defs>
+        <linearGradient id="flatGrad1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(200,140,50,0.28)"/>
+          <stop offset="100%" stop-color="rgba(200,140,50,0)"/>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="60" width="1440" height="60" fill="url(#flatGrad1)"/>
+      <line x1="0" y1="60" x2="1440" y2="60" stroke="rgba(200,150,70,0.35)" stroke-width="1"/>
     </svg>
   </div>
   <div class="wave wave-2">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path class="fill" d="M0,60 C200,30 400,90 600,60 C800,30 1000,90 1200,60 C1350,40 1440,55 1440,55 L1440,120 L0,120 Z"/>
-      <path class="stroke" d="M0,60 C200,30 400,90 600,60 C800,30 1000,90 1200,60 C1350,40 1440,55 1440,55"/>
+      <defs>
+        <linearGradient id="flatGrad2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(220,165,80,0.22)"/>
+          <stop offset="100%" stop-color="rgba(220,165,80,0)"/>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="70" width="1440" height="50" fill="url(#flatGrad2)"/>
+      <line x1="0" y1="70" x2="1440" y2="70" stroke="rgba(220,170,80,0.55)" stroke-width="1"/>
     </svg>
   </div>
   <div class="wave wave-3">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path class="fill" d="M0,55 C150,85 300,25 480,55 C660,85 840,25 1020,55 C1200,85 1380,25 1440,50 L1440,120 L0,120 Z"/>
-      <path class="stroke" d="M0,55 C150,85 300,25 480,55 C660,85 840,25 1020,55 C1200,85 1380,25 1440,50"/>
+      <defs>
+        <linearGradient id="flatGrad3" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(240,185,90,0.3)"/>
+          <stop offset="100%" stop-color="rgba(240,185,90,0)"/>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="80" width="1440" height="40" fill="url(#flatGrad3)"/>
+      <line x1="0" y1="80" x2="1440" y2="80" stroke="rgba(240,185,90,0.85)" stroke-width="1.2"/>
     </svg>
   </div>
 </div>
