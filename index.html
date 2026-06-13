@@ -46,10 +46,17 @@
     from{opacity:0;transform:translateY(20px) scale(0.85)}
     to{opacity:1;transform:translateY(0) scale(1)}
   }
+  @keyframes appleFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+  }
+  .apple-wrap{
+    animation:appleReveal 2s ease 0.2s forwards, appleFloat 3s ease-in-out 2.2s infinite;
+  }
 
   .apple-svg{
     width:clamp(90px,18vw,140px);height:auto;
-    filter:drop-shadow(0 0 28px rgba(210,120,40,0.55));
+    filter:drop-shadow(0 0 20px rgba(200,83,74,0.5));
   }
 
   /* 纸鹤 - 仅蓝色主题显示 */
@@ -173,7 +180,7 @@
   body.theme-warm .bottom-line{color:rgba(160,110,50,0.55)}
   body.theme-warm .corner{border-color:rgba(180,120,50,0.8)}
   body.theme-warm .footer{color:rgba(160,110,50,0.3)}
-  body.theme-warm .apple-svg{filter:drop-shadow(0 0 28px rgba(210,120,40,0.55))}
+  body.theme-warm .apple-svg{filter:drop-shadow(0 0 20px rgba(200,83,74,0.5))}
 
   /* ===== 主题2: 琥珀透光 ===== */
   body.theme-amber{
@@ -191,7 +198,7 @@
   body.theme-amber .bottom-line{color:rgba(130,90,35,0.6)}
   body.theme-amber .corner{border-color:rgba(160,110,50,0.8)}
   body.theme-amber .footer{color:rgba(130,90,35,0.35)}
-  body.theme-amber .apple-svg{filter:drop-shadow(0 0 28px rgba(180,100,30,0.6))}
+  body.theme-amber .apple-svg{filter:drop-shadow(0 0 20px rgba(200,83,74,0.55))}
   body.theme-amber .wave-1 path.fill{fill:rgba(200,150,60,0.15)}
   body.theme-amber .wave-1 path.stroke{stroke:rgba(200,150,70,0.4)}
   body.theme-amber .wave-2 path.fill{fill:rgba(210,165,80,0.22)}
@@ -242,7 +249,7 @@
   body.theme-dark .bottom-line{color:rgba(200,160,100,0.35)}
   body.theme-dark .corner{border-color:rgba(200,130,50,0.8)}
   body.theme-dark .footer{color:rgba(180,130,70,0.2)}
-  body.theme-dark .apple-svg{filter:drop-shadow(0 0 24px rgba(210,100,30,0.5))}
+  body.theme-dark .apple-svg{filter:drop-shadow(0 0 20px rgba(200,83,74,0.5))}
   body.theme-dark .wave-1 path.fill{fill:rgba(160,100,30,0.1)}
   body.theme-dark .wave-1 path.stroke{stroke:rgba(200,140,50,0.35)}
   body.theme-dark .wave-2 path.fill{fill:rgba(200,145,55,0.18)}
@@ -318,34 +325,32 @@
 
 <div class="container">
 
-  <!-- 苹果切片 SVG（横切面，星形籽） -->
+  <!-- 幽灵苹果 SVG -->
   <div class="apple-wrap">
-    <svg class="apple-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <!-- 外层光晕 -->
-      <ellipse cx="100" cy="100" rx="88" ry="88" fill="rgba(210,90,20,0.06)" filter="blur(6px)"/>
-      <!-- 果皮 -->
-      <circle cx="100" cy="100" r="82" fill="rgba(210,90,20,0.18)"/>
-      <circle cx="100" cy="100" r="76" fill="rgba(220,100,30,0.25)"/>
-      <!-- 果肉 -->
-      <circle cx="100" cy="100" r="70" fill="rgba(235,140,50,0.7)"/>
-      <circle cx="100" cy="100" r="62" fill="rgba(240,155,60,0.8)"/>
-      <!-- 果心纹理 -->
-      <ellipse cx="100" cy="100" rx="40" ry="38" fill="rgba(225,130,45,0.35)"/>
-      <!-- 星形籽（苹果核的星形排列） -->
-      <!-- 中心 -->
-      <ellipse cx="100" cy="100" rx="6" ry="6" fill="rgba(120,60,20,0.9)"/>
-      <!-- 五角星方向分布的籽 -->
-      <ellipse cx="100" cy="76" rx="5" ry="8" fill="rgba(110,55,18,0.85)" transform="rotate(0 100 100)"/>
-      <ellipse cx="100" cy="124" rx="5" ry="8" fill="rgba(110,55,18,0.85)" transform="rotate(0 100 100)"/>
-      <ellipse cx="76" cy="100" rx="8" ry="5" fill="rgba(110,55,18,0.85)" transform="rotate(0 100 100)"/>
-      <ellipse cx="124" cy="100" rx="8" ry="5" fill="rgba(110,55,18,0.85)" transform="rotate(0 100 100)"/>
-      <!-- 斜向四籽 -->
-      <ellipse cx="82" cy="82" rx="5" ry="7" fill="rgba(110,55,18,0.8)" transform="rotate(45 82 82)"/>
-      <ellipse cx="118" cy="82" rx="5" ry="7" fill="rgba(110,55,18,0.8)" transform="rotate(-45 118 82)"/>
-      <ellipse cx="82" cy="118" rx="5" ry="7" fill="rgba(110,55,18,0.8)" transform="rotate(-45 82 118)"/>
-      <ellipse cx="118" cy="118" rx="5" ry="7" fill="rgba(110,55,18,0.8)" transform="rotate(45 118 118)"/>
-      <!-- 高光 -->
-      <ellipse cx="78" cy="72" rx="18" ry="12" fill="rgba(255,220,160,0.12)" transform="rotate(-30 78 72)"/>
+    <svg class="apple-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="appleAura" cx="50%" cy="50%">
+          <stop offset="0%" stop-color="#c8534a" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+        <radialGradient id="appleBodyGrad" cx="38%" cy="35%" r="60%">
+          <stop offset="0%" stop-color="#d4645a"/>
+          <stop offset="60%" stop-color="#c8534a"/>
+          <stop offset="100%" stop-color="#8B0000"/>
+        </radialGradient>
+        <filter id="appleShadow">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#8B0000" flood-opacity="0.4"/>
+        </filter>
+      </defs>
+      <circle cx="50" cy="55" r="52" fill="url(#appleAura)"/>
+      <ellipse cx="50" cy="57" rx="38" ry="40" fill="url(#appleBodyGrad)" filter="url(#appleShadow)"/>
+      <ellipse cx="50" cy="22" rx="10" ry="5" fill="#c8534a" opacity="0.5"/>
+      <ellipse cx="34" cy="44" rx="9" ry="11" fill="rgba(255,255,255,0.18)" transform="rotate(-15,34,44)"/>
+      <ellipse cx="26" cy="62" rx="8" ry="5" fill="rgba(180,60,60,0.3)"/>
+      <ellipse cx="74" cy="62" rx="8" ry="5" fill="rgba(180,60,60,0.3)"/>
+      <path d="M50,20 Q48,10 52,6" stroke="#5a3a2a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M52,6 Q62,0 68,8 Q60,15 52,12 Q50,10 52,6Z" fill="#5a7a3a" stroke="#4a6a2a" stroke-width="0.5"/>
+      <path d="M35,86 Q50,94 65,86" stroke="rgba(139,0,0,0.3)" stroke-width="2" fill="none" stroke-linecap="round"/>
     </svg>
   </div>
 
