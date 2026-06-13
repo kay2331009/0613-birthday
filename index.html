@@ -286,10 +286,11 @@
   body.theme-dawn .corner{border-color:rgba(255,160,80,0.7)}
   body.theme-dawn .footer{color:rgba(200,160,100,0.25)}
   body.theme-dawn .apple-svg{filter:none !important}
-  body.theme-dawn .apple-wrap svg .apple-body{opacity:1}
-  body.theme-dawn .apple-wrap svg .blush{opacity:0.7}
-  body.theme-dawn .apple-wrap svg .eye{opacity:1}
-  body.theme-dawn .apple-wrap svg .smile{opacity:0.95}
+  body.theme-dawn .apple-wrap svg .apple-body{opacity:1;fill:rgba(160,50,40,0.9)}
+  body.theme-dawn .apple-wrap svg .blush{fill:rgba(140,40,30,0.6)}
+  body.theme-dawn .apple-wrap svg .eye{opacity:1;fill:rgba(160,50,40,0.95)}
+  body.theme-dawn .apple-wrap svg .smile{opacity:0.95;stroke:rgba(160,50,40,0.9)}
+  body.theme-dawn .apple-wrap svg .outer-halo{stroke:rgba(160,50,40,0.25)}
   body.theme-dawn .wave-1 path.fill{fill:rgba(200,130,50,0.15)}
   body.theme-dawn .wave-1 path.stroke{stroke:rgba(255,160,60,0.4)}
   body.theme-dawn .wave-2 path.fill{fill:rgba(220,155,70,0.2)}
@@ -406,7 +407,7 @@
   <div class="apple-wrap">
     <svg class="apple-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <!-- 外层光晕 -->
-      <ellipse cx="50" cy="55" rx="44" ry="38" fill="rgba(200,83,74,0.08)" stroke="rgba(200,83,74,0.3)" stroke-width="1"/>
+      <ellipse cx="50" cy="55" rx="44" ry="38" fill="rgba(200,83,74,0.08)" stroke="rgba(200,83,74,0.3)" stroke-width="1" class="outer-halo"/>
       <!-- 苹果主体：椭圆，无边界线，不透明度拉高 -->
       <ellipse cx="50" cy="55" rx="38" ry="33" fill="rgba(200,83,74,0.5)" stroke="none" class="apple-body"/>
       <!-- 内部腮红 -->
