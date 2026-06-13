@@ -297,6 +297,10 @@
     top:50%;left:50%;transform:translate(-50%,-50%);
     pointer-events:none;
   }
+  body.theme-dawn .apple-wrap svg .apple-body{opacity:0.8}
+  body.theme-dawn .apple-wrap svg .blush{opacity:0.55}
+  body.theme-dawn .apple-wrap svg .eye{opacity:0.95}
+  body.theme-dawn .apple-wrap svg .smile{opacity:0.9}
   body.theme-dawn .wave-1 path.fill{fill:rgba(200,130,50,0.15)}
   body.theme-dawn .wave-1 path.stroke{stroke:rgba(255,160,60,0.4)}
   body.theme-dawn .wave-2 path.fill{fill:rgba(220,155,70,0.2)}
@@ -378,16 +382,16 @@
       <!-- 外层光晕 -->
       <ellipse cx="50" cy="55" rx="44" ry="38" fill="rgba(200,83,74,0.08)" stroke="rgba(200,83,74,0.3)" stroke-width="1"/>
       <!-- 苹果主体：椭圆，无边界线，不透明度拉高 -->
-      <ellipse cx="50" cy="55" rx="38" ry="33" fill="rgba(200,83,74,0.5)" stroke="none"/>
+      <ellipse cx="50" cy="55" rx="38" ry="33" fill="rgba(200,83,74,0.5)" stroke="none" class="apple-body"/>
       <!-- 内部腮红 -->
-      <ellipse cx="34" cy="54" rx="7" ry="5" fill="rgba(180,60,60,0.2)" transform="rotate(-15,34,54)"/>
-      <ellipse cx="66" cy="54" rx="7" ry="5" fill="rgba(180,60,60,0.2)" transform="rotate(15,66,54)"/>
+      <ellipse cx="34" cy="54" rx="7" ry="5" fill="rgba(180,60,60,0.2)" transform="rotate(-15,34,54)" class="blush"/>
+      <ellipse cx="66" cy="54" rx="7" ry="5" fill="rgba(180,60,60,0.2)" transform="rotate(15,66,54)" class="blush"/>
       <!-- 叶子 -->
       <path d="M50,26 Q46,18 50,14 Q58,14 60,20 Q56,22 50,26Z" fill="rgba(80,160,80,0.45)" stroke="rgba(80,160,80,0.3)" stroke-width="0.5"/>
       <!-- 笑脸 -->
-      <circle cx="40" cy="52" r="2" fill="rgba(200,83,74,0.7)"/>
-      <circle cx="60" cy="52" r="2" fill="rgba(200,83,74,0.7)"/>
-      <path d="M40,58 Q50,62 60,58" stroke="rgba(200,83,74,0.6)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <circle cx="40" cy="52" r="2" fill="rgba(200,83,74,0.7)" class="eye"/>
+      <circle cx="60" cy="52" r="2" fill="rgba(200,83,74,0.7)" class="eye"/>
+      <path d="M40,58 Q50,62 60,58" stroke="rgba(200,83,74,0.6)" stroke-width="1.2" fill="none" stroke-linecap="round" class="smile"/>
     </svg>
   </div>
 
