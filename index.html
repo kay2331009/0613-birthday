@@ -114,6 +114,134 @@
     z-index:1;
   }
 
+  /* 主题切换按钮 */
+  .theme-btn{
+    position:fixed;top:20px;right:20px;z-index:10;
+    width:32px;height:32px;border-radius:50%;
+    background:rgba(200,160,80,0.15);border:1px solid rgba(200,160,80,0.3);
+    cursor:pointer;display:flex;align-items:center;justify-content:center;
+    opacity:0;animation:fadeUp 1s ease 2.5s forwards;
+    transition:background 0.2s,transform 0.2s;
+  }
+  .theme-btn:hover{background:rgba(200,160,80,0.3);transform:scale(1.1)}
+  .theme-btn svg{width:16px;height:16px;opacity:0.7}
+
+  /* 主题面板 */
+  .theme-panel{
+    position:fixed;top:60px;right:20px;z-index:10;
+    background:rgba(255,250,240,0.92);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(200,160,80,0.25);
+    border-radius:12px;padding:16px;
+    display:none;flex-direction:column;gap:10px;
+    box-shadow:0 8px 32px rgba(80,50,10,0.12);
+    min-width:180px;
+  }
+  .theme-panel.open{display:flex}
+  .theme-panel-label{
+    font-family:'STKaiti','KaiTi',serif;
+    font-size:0.62rem;letter-spacing:0.35em;
+    color:rgba(150,110,50,0.6);margin-bottom:4px;
+  }
+  .theme-swatches{display:flex;gap:8px;flex-wrap:wrap}
+  .swatch{
+    width:36px;height:36px;border-radius:50%;cursor:pointer;
+    border:2px solid rgba(0,0,0,0.08);transition:transform 0.15s,box-shadow 0.15s;
+  }
+  .swatch:hover{transform:scale(1.15);box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+  .swatch.active{border-color:rgba(180,130,50,0.8);box-shadow:0 0 0 2px rgba(200,160,80,0.4)}
+  .swatch-name{
+    font-family:'STKaiti','KaiTi',serif;
+    font-size:0.58rem;letter-spacing:0.25em;
+    color:rgba(120,90,40,0.7);text-align:center;margin-top:6px;
+  }
+
+  /* ===== 主题1: 清透暖白 ===== */
+  body.theme-warm .container{color:#6b4a10}
+  body.theme-warm .top-line{color:rgba(160,120,60,0.6)}
+  body.theme-warm .main-text{color:#6b4a10}
+  body.theme-warm .divider{background:linear-gradient(to bottom,transparent,rgba(180,130,60,0.5),transparent)}
+  body.theme-warm .bottom-line{color:rgba(160,110,50,0.55)}
+  body.theme-warm .corner{border-color:rgba(180,120,50,0.8)}
+  body.theme-warm .footer{color:rgba(160,110,50,0.3)}
+  body.theme-warm .apple-svg{filter:drop-shadow(0 0 28px rgba(210,120,40,0.55))}
+
+  /* ===== 主题2: 琥珀透光 ===== */
+  body.theme-amber{
+    background:linear-gradient(180deg,#f7e8d0 0%,#e8d4a8 50%,#d4b878 100%);
+    color:#5a3a10;
+  }
+  body.theme-amber::before{
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 35%,rgba(255,200,100,0.5) 0%,transparent 60%),
+      radial-gradient(ellipse 100% 80% at 50% 40%,rgba(255,180,60,0.2) 0%,transparent 70%);
+  }
+  body.theme-amber .top-line{color:rgba(150,100,40,0.65)}
+  body.theme-amber .main-text{color:#4a2e0a}
+  body.theme-amber .divider{background:linear-gradient(to bottom,transparent,rgba(160,110,50,0.55),transparent)}
+  body.theme-amber .bottom-line{color:rgba(130,90,35,0.6)}
+  body.theme-amber .corner{border-color:rgba(160,110,50,0.8)}
+  body.theme-amber .footer{color:rgba(130,90,35,0.35)}
+  body.theme-amber .apple-svg{filter:drop-shadow(0 0 28px rgba(180,100,30,0.6))}
+  body.theme-amber .wave-1 path.fill{fill:rgba(200,150,60,0.15)}
+  body.theme-amber .wave-1 path.stroke{stroke:rgba(200,150,70,0.4)}
+  body.theme-amber .wave-2 path.fill{fill:rgba(210,165,80,0.22)}
+  body.theme-amber .wave-2 path.stroke{stroke:rgba(210,165,80,0.65)}
+  body.theme-amber .wave-3 path.fill{fill:rgba(225,190,100,0.32)}
+  body.theme-amber .wave-3 path.stroke{stroke:rgba(225,180,80,0.9)}
+  body.theme-amber .sparkle{background:rgba(255,180,60,0.85);box-shadow:0 0 6px 2px rgba(255,160,50,0.5)}
+
+  /* ===== 主题3: 薄暮粉金 ===== */
+  body.theme-sunset{
+    background:linear-gradient(180deg,#fde8ec 0%,#f8d0dc 40%,#f0b8cc 100%);
+    color:#6b2a4a;
+  }
+  body.theme-sunset::before{
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 35%,rgba(255,200,180,0.55) 0%,transparent 60%),
+      radial-gradient(ellipse 100% 80% at 50% 40%,rgba(255,160,140,0.2) 0%,transparent 70%);
+  }
+  body.theme-sunset .top-line{color:rgba(160,80,100,0.6)}
+  body.theme-sunset .main-text{color:#6b2a4a}
+  body.theme-sunset .divider{background:linear-gradient(to bottom,transparent,rgba(200,100,140,0.5),transparent)}
+  body.theme-sunset .bottom-line{color:rgba(150,70,100,0.55)}
+  body.theme-sunset .corner{border-color:rgba(200,100,130,0.8)}
+  body.theme-sunset .footer{color:rgba(150,70,100,0.3)}
+  body.theme-sunset .apple-svg{filter:drop-shadow(0 0 28px rgba(200,80,100,0.5))}
+  body.theme-sunset .wave-1 path.fill{fill:rgba(200,120,140,0.15)}
+  body.theme-sunset .wave-1 path.stroke{stroke:rgba(200,120,140,0.4)}
+  body.theme-sunset .wave-2 path.fill{fill:rgba(215,145,160,0.22)}
+  body.theme-sunset .wave-2 path.stroke{stroke:rgba(215,145,160,0.65)}
+  body.theme-sunset .wave-3 path.fill{fill:rgba(235,175,185,0.32)}
+  body.theme-sunset .wave-3 path.stroke{stroke:rgba(230,155,170,0.9)}
+  body.theme-sunset .sparkle{background:rgba(255,160,180,0.85);box-shadow:0 0 6px 2px rgba(255,130,160,0.5)}
+
+  /* ===== 主题4: 暗夜暖橙（原版） ===== */
+  body.theme-dark{
+    background:#0a0705;
+    color:#f5e6d0;
+  }
+  body.theme-dark::before{
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 38%,rgba(80,40,10,0.45) 0%,transparent 65%),
+      radial-gradient(ellipse 90% 70% at 50% 50%,rgba(50,25,10,0.2) 0%,transparent 70%),
+      radial-gradient(ellipse 100% 80% at 50% 50%,rgba(5,3,1,0.9) 0%,transparent 80%);
+  }
+  body.theme-dark .top-line{color:rgba(220,180,120,0.45)}
+  body.theme-dark .main-text{color:#f5e6d0}
+  body.theme-dark .divider{background:linear-gradient(to bottom,transparent,rgba(200,140,60,0.4),transparent)}
+  body.theme-dark .bottom-line{color:rgba(200,160,100,0.35)}
+  body.theme-dark .corner{border-color:rgba(200,130,50,0.8)}
+  body.theme-dark .footer{color:rgba(180,130,70,0.2)}
+  body.theme-dark .apple-svg{filter:drop-shadow(0 0 24px rgba(210,100,30,0.5))}
+  body.theme-dark .wave-1 path.fill{fill:rgba(160,100,30,0.1)}
+  body.theme-dark .wave-1 path.stroke{stroke:rgba(200,140,50,0.35)}
+  body.theme-dark .wave-2 path.fill{fill:rgba(200,145,55,0.18)}
+  body.theme-dark .wave-2 path.stroke{stroke:rgba(230,180,80,0.55)}
+  body.theme-dark .wave-3 path.fill{fill:rgba(240,185,90,0.28)}
+  body.theme-dark .wave-3 path.stroke{stroke:rgba(255,230,150,0.8)}
+  body.theme-dark .sparkle{background:rgba(255,220,120,0.75);box-shadow:0 0 4px 1px rgba(255,220,120,0.4)}
+
   /* 海面波纹 */
   .waves-wrap{
     position:fixed;bottom:0;left:0;right:0;height:140px;overflow:hidden;z-index:0;pointer-events:none;
@@ -226,6 +354,55 @@
 </div>
 
 <div class="footer">日光入海 · 水波金来</div>
+
+<!-- 主题切换按钮 -->
+<div class="theme-btn" onclick="toggleThemePanel()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="rgba(160,120,60,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+  </svg>
+</div>
+
+<!-- 主题面板 -->
+<div class="theme-panel" id="themePanel">
+  <div class="theme-panel-label">选择主题</div>
+  <div class="theme-swatches">
+    <div>
+      <div class="swatch active" style="background:linear-gradient(135deg,#fdf6ec,#e8d4a8)" onclick="setTheme('warm')" title="清透暖白"></div>
+      <div class="swatch-name">暖白</div>
+    </div>
+    <div>
+      <div class="swatch" style="background:linear-gradient(135deg,#e8d4a8,#c8a060)" onclick="setTheme('amber')" title="琥珀透光"></div>
+      <div class="swatch-name">琥珀</div>
+    </div>
+    <div>
+      <div class="swatch" style="background:linear-gradient(135deg,#f8d0dc,#e088a8)" onclick="setTheme('sunset')" title="薄暮粉金"></div>
+      <div class="swatch-name">粉金</div>
+    </div>
+    <div>
+      <div class="swatch" style="background:linear-gradient(135deg,#1a1008,#3d2010)" onclick="setTheme('dark')" title="暗夜暖橙"></div>
+      <div class="swatch-name">暗橙</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleThemePanel(){
+  document.getElementById('themePanel').classList.toggle('open');
+}
+function setTheme(name){
+  document.body.className='';
+  document.body.classList.add('theme-'+name);
+  document.querySelectorAll('.swatch').forEach(function(s){s.classList.remove('active')});
+  event.currentTarget.classList.add('active');
+  document.getElementById('themePanel').classList.remove('open');
+  localStorage.setItem('0613theme',name);
+}
+(function(){
+  var saved=localStorage.getItem('0613theme');
+  if(saved){setTheme(saved);}
+})();
+</script>
 
 <!-- 海面波纹 -->
 <div class="waves-wrap">
